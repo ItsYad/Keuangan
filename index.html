@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manajemen Keuangan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pengelola Keuangan Bulanan</h1>
+
+      <div class="form-container">
+        <input type="text" id="desc" placeholder="Deskripsi transaksi" />
+        <input type="number" id="amount" placeholder="Jumlah" />
+        <select id="type">
+          <option value="income">Pemasukan</option>
+          <option value="expense">Pengeluaran</option>
+        </select>
+        <button onclick="addTransaction()">Tambah</button>
+      </div>
+
+      <h2>Transaksi</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Deskripsi</th>
+            <th>Jumlah</th>
+            <th>Tipe</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list"></tbody>
+      </table>
+
+      <h2>Ringkasan Keuangan</h2>
+      <p id="total-balance">Saldo: 0</p>
+      <p id="summary-info"></p>
+      <p id="budget-info"></p>
+
+      <button onclick="setBudget()">Atur Budget</button>
+      <button onclick="exportToExcel()">Ekspor ke Excel</button>
+      <button onclick="exportToPDF()">Ekspor ke PDF</button>
+
+      <h2>Reminder Tagihan</h2>
+      <ul id="reminder-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
